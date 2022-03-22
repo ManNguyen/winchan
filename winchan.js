@@ -181,6 +181,7 @@ var WinChan = (function() {
 
         function onMessage(e) {
           if (e.origin !== origin) { return; }
+          if (typeof e.data !== 'string') { return; }
           try {
             var d = JSON.parse(e.data);
           } catch(err) {
